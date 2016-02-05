@@ -1,10 +1,13 @@
 #import "DDXMLPrivate.h"
 #import "NSString+DDXML.h"
 
+<<<<<<< HEAD:Xcode/Testing-swift/Pods/KissXML/KissXML/DDXMLDocument.m
 #if ! __has_feature(objc_arc)
 #warning This file must be compiled with ARC. Use -fobjc-arc flag (or convert project to ARC).
 #endif
 
+=======
+>>>>>>> origin/3.2.X:Vendor/KissXML/DDXMLDocument.m
 /**
  * Welcome to KissXML.
  * 

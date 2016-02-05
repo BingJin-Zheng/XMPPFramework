@@ -4,10 +4,13 @@
 #import <libxml/xpath.h>
 #import <libxml/xpathInternals.h>
 
+<<<<<<< HEAD:Xcode/Testing-swift/Pods/KissXML/KissXML/DDXMLNode.m
 #if ! __has_feature(objc_arc)
 #warning This file must be compiled with ARC. Use -fobjc-arc flag (or convert project to ARC).
 #endif
 
+=======
+>>>>>>> origin/3.2.X:Vendor/KissXML/DDXMLNode.m
 /**
  * Welcome to KissXML.
  * 
@@ -233,6 +236,10 @@ static void MarkDeath(void *xmlPtr, DDXMLNode *wrapper);
 	}
 	else
 	{
+<<<<<<< HEAD:Xcode/Testing-swift/Pods/KissXML/KissXML/DDXMLNode.m
+=======
+		[self release];
+>>>>>>> origin/3.2.X:Vendor/KissXML/DDXMLNode.m
 		return [[DDXMLInvalidNode alloc] init];
 	}
 }
@@ -2545,6 +2552,10 @@ BOOL DDXMLIsZombie(void *xmlPtr, DDXMLNode *wrapper)
 - (void)dealloc
 {
 	if (attrNsPtr) xmlFreeNs(attrNsPtr);
+<<<<<<< HEAD:Xcode/Testing-swift/Pods/KissXML/KissXML/DDXMLNode.m
+=======
+	[super dealloc];
+>>>>>>> origin/3.2.X:Vendor/KissXML/DDXMLNode.m
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2762,6 +2773,24 @@ BOOL DDXMLIsZombie(void *xmlPtr, DDXMLNode *wrapper)
 		{
 			return [NSString stringWithUTF8String:((const char *)attr->ns->href)];
 		}
+<<<<<<< HEAD:Xcode/Testing-swift/Pods/KissXML/KissXML/DDXMLNode.m
+	}
+	
+	// The attribute doesn't explicitly have a namespace.
+	// But if the attribute is something like animal:duck='quack', then we should look for the URI for 'animal'.
+	// 
+	// Note: [self prefix] returns an empty string if there is no prefix. (Not nil)
+	
+	NSString *prefix = [self prefix];
+	if ([prefix length] > 0)
+	{
+		xmlNsPtr ns = xmlSearchNs(attr->doc, attr->parent, [prefix xmlChar]);
+		if (ns && ns->href)
+		{
+			return [NSString stringWithUTF8String:((const char *)ns->href)];
+		}
+=======
+>>>>>>> origin/3.2.X:Vendor/KissXML/DDXMLNode.m
 	}
 	
 	// The attribute doesn't explicitly have a namespace.
@@ -2903,3 +2932,125 @@ BOOL DDXMLIsZombie(void *xmlPtr, DDXMLNode *wrapper)
 
 @end
 
+<<<<<<< HEAD:Xcode/Testing-swift/Pods/KissXML/KissXML/DDXMLNode.m
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark -
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+@implementation DDXMLInvalidNode
+
+// #pragma mark Properties
+
+- (DDXMLNodeKind)kind {
+	return DDXMLInvalidKind;
+}
+
+- (void)setName:(NSString *)name { }
+- (NSString *)name {
+	return nil;
+}
+
+- (void)setObjectValue:(id)value { }
+- (id)objectValue {
+	return nil;
+}
+
+- (void)setStringValue:(NSString *)string { }
+- (void)setStringValue:(NSString *)string resolvingEntities:(BOOL)resolve { }
+- (NSString *)stringValue {
+	return nil;
+}
+
+// #pragma mark Tree Navigation
+
+- (NSUInteger)index {
+	return 0;
+}
+
+- (NSUInteger)level {
+	return 0;
+}
+
+- (DDXMLDocument *)rootDocument {
+	return nil;
+}
+
+- (DDXMLNode *)parent {
+	return nil;
+}
+- (NSUInteger)childCount {
+	return 0;
+}
+- (NSArray *)children {
+	return [NSArray array];
+}
+- (DDXMLNode *)childAtIndex:(NSUInteger)index {
+	return nil;
+}
+
+- (DDXMLNode *)previousSibling {
+	return nil;
+}
+- (DDXMLNode *)nextSibling {
+	return nil;
+}
+
+- (DDXMLNode *)previousNode {
+	return nil;
+}
+- (DDXMLNode *)nextNode {
+	return nil;
+}
+
+- (void)detach { }
+
+- (NSString *)XPath {
+	return @"";
+}
+
+// #pragma mark QNames
+
+- (NSString *)localName {
+	return nil;
+}
+- (NSString *)prefix {
+	return @"";
+}
+
+- (void)setURI:(NSString *)URI { }
+- (NSString *)URI {
+	return nil;
+}
+
+// #pragma mark Output
+
+- (NSString *)description {
+	return @"";
+}
+- (NSString *)XMLString {
+	return @"";
+}
+- (NSString *)XMLStringWithOptions:(NSUInteger)options {
+	return @"";
+}
+- (NSString *)canonicalXMLStringPreservingComments:(BOOL)comments {
+	return nil;
+}
+
+// #pragma mark XPath/XQuery
+
+- (NSArray *)nodesForXPath:(NSString *)xpath error:(NSError **)error {
+	return [NSArray array];
+}
+
+- (NSArray *)objectsForXQuery:(NSString *)xquery constants:(NSDictionary *)constants error:(NSError **)error {
+	return [NSArray array];
+}
+- (NSArray *)objectsForXQuery:(NSString *)xquery error:(NSError **)error {
+	return [NSArray array];
+}
+
+@end
+
+=======
+>>>>>>> origin/3.2.X:Vendor/KissXML/DDXMLNode.m

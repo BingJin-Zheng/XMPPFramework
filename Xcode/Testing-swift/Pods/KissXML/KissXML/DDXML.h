@@ -1,5 +1,6 @@
 /**
  * Welcome to KissXML.
+<<<<<<< HEAD:Xcode/Testing-swift/Pods/KissXML/KissXML/DDXML.h
  *
  * The project page has documentation if you have questions.
  * https://github.com/robbiehanson/KissXML
@@ -13,6 +14,21 @@
  * For API Reference, see Apple's excellent documentation,
  * either via Xcode's Mac OS X documentation, or via the web:
  *
+=======
+ * 
+ * The project page has documentation if you have questions.
+ * https://github.com/robbiehanson/KissXML
+ * 
+ * If you're new to the project you may wish to read the "Getting Started" wiki.
+ * https://github.com/robbiehanson/KissXML/wiki/GettingStarted
+ * 
+ * KissXML provides a drop-in replacement for Apple's NSXML class cluster.
+ * The goal is to get the exact same behavior as the NSXML classes.
+ * 
+ * For API Reference, see Apple's excellent documentation,
+ * either via Xcode's Mac OS X documentation, or via the web:
+ * 
+>>>>>>> origin/3.2.X:Vendor/KissXML/DDXML.h
  * https://github.com/robbiehanson/KissXML/wiki/Reference
 **/
 
@@ -20,12 +36,21 @@
 #import "DDXMLElement.h"
 #import "DDXMLDocument.h"
 
+<<<<<<< HEAD:Xcode/Testing-swift/Pods/KissXML/KissXML/DDXML.h
+=======
+
+
+>>>>>>> origin/3.2.X:Vendor/KissXML/DDXML.h
 #if TARGET_OS_IPHONE
 
 // Since KissXML is a drop in replacement for NSXML,
 // it may be desireable (when writing cross-platform code to be used on both Mac OS X and iOS)
 // to use the NSXML prefixes instead of the DDXML prefix.
+<<<<<<< HEAD:Xcode/Testing-swift/Pods/KissXML/KissXML/DDXML.h
 //
+=======
+// 
+>>>>>>> origin/3.2.X:Vendor/KissXML/DDXML.h
 // This way, on Mac OS X it uses NSXML, and on iOS it uses KissXML.
 
 #ifndef NSXMLNode
@@ -97,7 +122,11 @@
 
 // KissXML has rather straight-forward memory management:
 // https://github.com/robbiehanson/KissXML/wiki/MemoryManagementThreadSafety
+<<<<<<< HEAD:Xcode/Testing-swift/Pods/KissXML/KissXML/DDXML.h
 //
+=======
+// 
+>>>>>>> origin/3.2.X:Vendor/KissXML/DDXML.h
 // There are 3 important concepts to keep in mind when working with KissXML:
 //
 //
@@ -174,17 +203,28 @@
 // So to help out, the library provides a debugging macro to track down these problems.
 // That is, if you invalidate the write-access thread-unsafe rule,
 // this macro will tell you when you're trying to access a now-dangling pointer.
+<<<<<<< HEAD:Xcode/Testing-swift/Pods/KissXML/KissXML/DDXML.h
 //
+=======
+// 
+>>>>>>> origin/3.2.X:Vendor/KissXML/DDXML.h
 // How does it work?
 // Well everytime a DDXML wrapper object is created atop a libxml structure,
 // it marks the linkage in a table.
 // And everytime a libxml structure is freed, it destorys all corresponding linkages in the table.
 // So everytime a DDXML wrapper objects is about to dereference it's pointer,
 // it first ensures the linkage still exists in the table.
+<<<<<<< HEAD:Xcode/Testing-swift/Pods/KissXML/KissXML/DDXML.h
 //
 // Set to 1 to enable
 // Set to 0 to disable (this is the default)
 //
+=======
+// 
+// Set to 1 to enable
+// Set to 0 to disable (this is the default)
+// 
+>>>>>>> origin/3.2.X:Vendor/KissXML/DDXML.h
 // The debugging macro adds a significant amount of overhead, and should NOT be enabled on production builds.
 
 #if DEBUG
